@@ -31,7 +31,7 @@ systems are introduced.
 
 File:
 
-/canon/CANON_INVARIANTS.md
+/canon/shared/CANON_INVARIANTS.md
 
 Purpose:
 
