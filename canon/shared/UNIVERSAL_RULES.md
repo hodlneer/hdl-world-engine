@@ -137,16 +137,11 @@ Movement between worlds must always be:
 
 # 9. Canon Authority
 
-If any document conflicts with another:
+This file is subordinate to `CANON_INVARIANTS.md`.
 
-Authority order is:
+If a rule in this document conflicts with `CANON_INVARIANTS.md`, the invariants win.
 
-1. UNIVERSAL_RULES.md
-2. WORLD_OVERVIEW.md
-3. RULES.md
-4. ENTITY documents
-
-Higher layers override lower layers.
+If a world-specific document conflicts with this file, this file wins unless overridden by invariants.
 
 ---
 

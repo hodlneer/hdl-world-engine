@@ -27,6 +27,16 @@ systems are introduced.
 
 ------------------------------------------------------------------------
 
+# Meta Documents
+
+The following documents help govern and navigate the canon repository,
+but are not part of the doctrinal authority stack:
+
+• CANON_INDEX.md\
+• CANON_AUTHORITY.md
+
+------------------------------------------------------------------------
+
 # Layer 1 --- Canon Invariants
 
 File:
