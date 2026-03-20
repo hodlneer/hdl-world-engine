@@ -231,6 +231,10 @@ Key entities include:
 • BTC hex network canon\
 • BTC origins document
 
+Supporting implementation docs include:
+
+• BTC rendering implementation
+
 This world visualizes the Bitcoin network and its historical identity.
 
 ------------------------------------------------------------------------
