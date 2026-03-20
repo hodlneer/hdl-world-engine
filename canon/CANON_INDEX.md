@@ -12,7 +12,7 @@ begin here.
 
 # Canon Structure
 
-The HDL canon is organized in **five layers of authority**.
+The HDL canon is organized in **five layers of doctrinal authority**.
 
 Higher layers override lower layers.
 
@@ -22,8 +22,16 @@ Higher layers override lower layers.
 4.  RULES.md
 5.  ENTITY FILES
 
-This hierarchy ensures the universe remains coherent as new worlds and
-systems are introduced.
+This hierarchy governs **truth and doctrine**.
+
+In addition to the doctrinal stack, the repository also contains:
+
+• shared architecture documents\
+• world-specific implementation specifications\
+• meta-governance and navigation documents
+
+These supporting documents do not outrank doctrine, but they are part of
+the canonical system and must remain consistent with it.
 
 ------------------------------------------------------------------------
 
@@ -34,6 +42,30 @@ but are not part of the doctrinal authority stack:
 
 • CANON_INDEX.md\
 • CANON_AUTHORITY.md
+
+------------------------------------------------------------------------
+
+# Shared Architecture
+
+These documents define engine-level, rendering-level, and cross-world
+implementation architecture shared by all worlds.
+
+Files:
+
+/canon/shared/ENGINE_PIPELINE.md\
+/canon/shared/WALLET_MODEL.md\
+/canon/shared/VISUALIZATION_RULES.md\
+/canon/shared/RENDERING_STRATEGY.md\
+/canon/shared/LOD_STRATEGY.md\
+/canon/shared/PARTICLE_SYSTEMS.md
+
+Purpose:
+
+Defines how HDL systems move from data and identity into geometry,
+particles, LOD, interaction, and rendered output.
+
+These files are canonical architecture, but they remain subordinate to
+the doctrinal hierarchy above.
 
 ------------------------------------------------------------------------
 
@@ -187,6 +219,42 @@ Entities must obey:
 
 ------------------------------------------------------------------------
 
+# World Implementation Specs
+
+These files specialize the shared architecture for a specific world.
+
+They do not replace doctrine.
+
+They explain how a world's rules, entities, rendering, data bindings, and
+engine semantics are actually expressed in implementation terms.
+
+### HDL World Implementation Specs
+
+/canon/hdl_world/IDENTITY_ANCHOR.md\
+/canon/hdl_world/ROUTING_ENGINE.md\
+/canon/hdl_world/WORLD_TOPOLOGY.md\
+/canon/hdl_world/PROOF_ENGINE.md\
+/canon/hdl_world/PROOF_ENGINE_LORE.md
+
+Purpose:
+
+Defines how HDL identity, routing, topology, and proof systems work
+inside the central world.
+
+### BTC World Implementation Specs
+
+/canon/btc_world/ENGINE_PIPELINE.md\
+/canon/btc_world/DATA_BINDING.md\
+/canon/btc_world/RENDERING_IMPL.md\
+/canon/btc_world/BTC_HEX_NETWORK_CANON_FULL_SPEC.md
+
+Purpose:
+
+Defines how Bitcoin-specific data, rendering, and participation models
+inherit from shared architecture and become concrete in BTC World.
+
+------------------------------------------------------------------------
+
 # Current Worlds
 
 The HDL universe currently defines the following worlds.
@@ -211,6 +279,22 @@ Contains:
 
 HDL is the safe hub connecting all ecosystems.
 
+Core doctrine:
+
+• /canon/hdl_world/_WORLD_OVERVIEW.md\
+• /canon/hdl_world/RULES.md\
+• /canon/hdl_world/ENTITIES.md\
+• /canon/hdl_world/OD.md\
+• /canon/hdl_world/DISCIPLES.md
+
+Supporting implementation docs:
+
+• /canon/hdl_world/IDENTITY_ANCHOR.md\
+• /canon/hdl_world/ROUTING_ENGINE.md\
+• /canon/hdl_world/WORLD_TOPOLOGY.md\
+• /canon/hdl_world/PROOF_ENGINE.md\
+• /canon/hdl_world/PROOF_ENGINE_LORE.md
+
 ------------------------------------------------------------------------
 
 ### Bitcoin World
@@ -233,7 +317,10 @@ Key entities include:
 
 Supporting implementation docs include:
 
-• BTC rendering implementation
+• /canon/btc_world/ENGINE_PIPELINE.md\
+• /canon/btc_world/DATA_BINDING.md\
+• /canon/btc_world/RENDERING_IMPL.md\
+• /canon/btc_world/BTC_HEX_NETWORK_CANON_FULL_SPEC.md
 
 This world visualizes the Bitcoin network and its historical identity.
 

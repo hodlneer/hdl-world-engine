@@ -6,6 +6,28 @@ It is a **contained experiential world**, perceived through a helmet-like interi
 
 The HDL World exists to provide orientation, continuity, safety, and psychological grounding while users explore long-term systems that are otherwise abstract, vast, or overwhelming.
 
+## Related Documents
+
+Core doctrine:
+- `RULES.md`
+- `ENTITIES.md`
+- `OD.md`
+- `DISCIPLES.md`
+
+Supporting implementation docs:
+- `IDENTITY_ANCHOR.md`
+- `ROUTING_ENGINE.md`
+- `WORLD_TOPOLOGY.md`
+- `PROOF_ENGINE.md`
+- `PROOF_ENGINE_LORE.md`
+
+Shared dependencies:
+- `../shared/UNIVERSAL_RULES.md`
+- `../shared/PORTALS.md`
+- `../shared/WALLET_MODEL.md`
+- `../shared/ENGINE_PIPELINE.md`
+- `../shared/RENDERING_STRATEGY.md`
+
 ---
 
 ## Core Identity

@@ -15,6 +15,29 @@ BTC World translates Bitcoin's:
 
 ...into a **spatial, visual, and navigable environment**.
 
+## Related Documents
+
+Core doctrine:
+- `RULES.md`
+- `ENTITIES.md`
+- `OD.md`
+- `SATOSHI.md`
+- `BTC_HEX_NETWORK_CANON.md`
+
+Supporting implementation docs:
+- `ENGINE_PIPELINE.md`
+- `DATA_BINDING.md`
+- `RENDERING_IMPL.md`
+- `BTC_HEX_NETWORK_CANON_FULL_SPEC.md`
+
+Shared dependencies:
+- `../shared/UNIVERSAL_RULES.md`
+- `../shared/VISUALIZATION_RULES.md`
+- `../shared/ENGINE_PIPELINE.md`
+- `../shared/RENDERING_STRATEGY.md`
+- `../shared/LOD_STRATEGY.md`
+- `../shared/PARTICLE_SYSTEMS.md`
+
 ---
 
 ## Core Philosophy

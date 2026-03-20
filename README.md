@@ -174,29 +174,63 @@ Tools must **submit to canon**, not the reverse.
 
 The repository is organized around **meaning first**.
 
-Example structure:
+The live canon currently follows this structure:
 
-    /canon
-        WHITE_WORLD_DOCTRINE.md
-        DISCIPLE_CANON.md
+```text
+/canon
+    /shared
+        CANON_INVARIANTS.md
+        UNIVERSAL_RULES.md
+        PORTALS.md
+        GLOSSARY.md
+        WALLET_MODEL.md
+        VISUALIZATION_RULES.md
+        ENGINE_PIPELINE.md
+        RENDERING_STRATEGY.md
+        LOD_STRATEGY.md
+        PARTICLE_SYSTEMS.md
+        AGENTS.md
+        BRAND_SYSTEM.md
 
-    /worlds
-        /bitcoin
-        /ethereum
-        /xrp
-        /solana
+    /hdl_world
+        _WORLD_OVERVIEW.md
+        RULES.md
+        OD.md
+        DISCIPLES.md
+        ENTITIES.md
+        IDENTITY_ANCHOR.md
+        ROUTING_ENGINE.md
+        WORLD_TOPOLOGY.md
+        PROOF_ENGINE.md
+        PROOF_ENGINE_LORE.md
 
-    /assets
-        canonical models
-        SVGs
-        symbolic geometry
+    /btc_world
+        _WORLD_OVERVIEW.md
+        RULES.md
+        OD.md
+        SATOSHI.md
+        ENTITIES.md
+        BTC_HEX_NETWORK_CANON.md
+        BTC_HEX_NETWORK_CANON_FULL_SPEC.md
+        DATA_BINDING.md
+        ENGINE_PIPELINE.md
+        RENDERING_IMPL.md
 
-    /sync
-        canon ratification and update protocols
+    CANON_INDEX.md
+    CANON_AUTHORITY.md
+```
 
-Files in `/canon` define immutable truths.
+Within that structure:
 
-Files elsewhere implement those truths.
+- `canon/shared/` contains cross-world doctrine, architecture, rendering, terminology, and brand-adjacent canon.
+- `canon/hdl_world/` contains HDL world doctrine, system intelligence, identity, routing, topology, and proof systems.
+- `canon/btc_world/` contains Bitcoin world doctrine, origins, entities, rendering implementation, data binding, and Bitcoin-specific technical canon.
+- `canon/CANON_INDEX.md` is the navigation map for the repo.
+- `canon/CANON_AUTHORITY.md` defines how canon is ratified and maintained.
+
+Files in `/canon` define immutable truths, shared architecture, and world-specific implementation doctrine.
+
+Rendering engines, websites, apps, and simulations should inherit from this structure rather than invent their own meaning model.
 
 ------------------------------------------------------------------------
 
