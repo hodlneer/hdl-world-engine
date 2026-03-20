@@ -18,6 +18,21 @@ It is intentionally **world-agnostic**.
 
 BTC, ETH, XRP, Solana, HDL World, and future worlds must all plug into this same engine structure, even when their data sources and visual semantics differ.
 
+## Related Documents
+
+Parent navigation:
+- `../CANON_INDEX.md`
+
+Shared architecture siblings:
+- `WALLET_MODEL.md`
+- `VISUALIZATION_RULES.md`
+- `RENDERING_STRATEGY.md`
+- `LOD_STRATEGY.md`
+- `PARTICLE_SYSTEMS.md`
+
+World specializations:
+- `../btc_world/ENGINE_PIPELINE.md`
+
 ---
 
 ## Core Principle

@@ -4,6 +4,21 @@
 
 This document defines the rules governing how blockchain networks are visualized in HDL 3D environments.
 
+## Related Documents
+
+Parent navigation:
+- `../CANON_INDEX.md`
+
+Shared architecture siblings:
+- `ENGINE_PIPELINE.md`
+- `RENDERING_STRATEGY.md`
+- `LOD_STRATEGY.md`
+- `PARTICLE_SYSTEMS.md`
+
+World specializations:
+- `../btc_world/RENDERING_IMPL.md`
+- `../btc_world/BTC_HEX_NETWORK_CANON.md`
+
 ---
 
 # 1. Network Node Visualization Rule

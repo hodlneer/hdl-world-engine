@@ -10,6 +10,21 @@ Instead, it specifies how Bitcoin data flows through the canonical pipeline defi
 
 → `shared/ENGINE_PIPELINE.md`
 
+## Related Documents
+
+Parent world docs:
+- `_WORLD_OVERVIEW.md`
+- `RULES.md`
+
+Shared dependencies:
+- `../shared/ENGINE_PIPELINE.md`
+- `../shared/RENDERING_STRATEGY.md`
+
+Sibling implementation docs:
+- `DATA_BINDING.md`
+- `RENDERING_IMPL.md`
+- `BTC_HEX_NETWORK_CANON_FULL_SPEC.md`
+
 ---
 
 ## Relationship to Shared Engine

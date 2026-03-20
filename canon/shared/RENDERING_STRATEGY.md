@@ -10,6 +10,20 @@ This document defines the **canonical rendering strategy** for all HDL worlds. I
 
 This is a **non-negotiable architectural guideline**. All worlds (BTC, ETH, future chains, and abstract realms) must adhere to this layered approach.
 
+## Related Documents
+
+Parent navigation:
+- `../CANON_INDEX.md`
+
+Shared architecture siblings:
+- `ENGINE_PIPELINE.md`
+- `VISUALIZATION_RULES.md`
+- `LOD_STRATEGY.md`
+- `PARTICLE_SYSTEMS.md`
+
+World specializations:
+- `../btc_world/RENDERING_IMPL.md`
+
 ---
 
 ## Core Principle

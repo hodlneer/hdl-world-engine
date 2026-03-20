@@ -232,6 +232,23 @@ Files in `/canon` define immutable truths, shared architecture, and world-specif
 
 Rendering engines, websites, apps, and simulations should inherit from this structure rather than invent their own meaning model.
 
+## Architecture Model
+
+The repo now operates across three distinct but connected layers:
+
+- **Doctrinal canon**: invariants, universal rules, world overviews, rules, and world-specific canonical objects define what is true.
+- **Shared architecture canon**: engine, wallet, visualization, rendering, LOD, and particle documents define how truth becomes interoperable systems.
+- **World implementation canon**: per-world pipeline, binding, topology, routing, proof, and rendering specs define how a specific world inherits shared architecture without breaking doctrine.
+
+The intended reading path is:
+
+1. Start with `canon/CANON_INDEX.md`
+2. Read doctrinal canon first
+3. Read shared architecture second
+4. Read world-specific implementation docs last
+
+This keeps meaning, system design, and implementation specialization separated while still allowing them to reinforce each other.
+
 ------------------------------------------------------------------------
 
 # Canon Synchronization

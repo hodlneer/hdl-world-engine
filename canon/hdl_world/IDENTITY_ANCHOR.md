@@ -13,6 +13,22 @@ It bridges:
 
 The Identity Anchor is how a user becomes **visible inside the blockchain universe**.
 
+## Related Documents
+
+Parent world docs:
+- `_WORLD_OVERVIEW.md`
+- `RULES.md`
+- `ENTITIES.md`
+
+Shared dependencies:
+- `../shared/WALLET_MODEL.md`
+- `../shared/ENGINE_PIPELINE.md`
+
+Sibling implementation docs:
+- `ROUTING_ENGINE.md`
+- `WORLD_TOPOLOGY.md`
+- `PROOF_ENGINE.md`
+
 ---
 
 ## Core Concept

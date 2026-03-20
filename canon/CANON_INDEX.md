@@ -194,7 +194,7 @@ These rules must follow both the world overview and the universal rules.
 
 ------------------------------------------------------------------------
 
-# Layer 5 --- Entities
+# Layer 5 --- World-Specific Canon Objects
 
 Examples:
 
@@ -207,10 +207,10 @@ Examples:
 
 Purpose:
 
-Defines the **characters, objects, and symbolic elements** that exist
-within a world.
+Defines the **world-specific canonical objects, origins records, system
+intelligence documents, and symbolic entities** that exist within a world.
 
-Entities must obey:
+These files must obey:
 
 • world rules\
 • world overview\
@@ -225,8 +225,9 @@ These files specialize the shared architecture for a specific world.
 
 They do not replace doctrine.
 
-They explain how a world's rules, entities, rendering, data bindings, and
-engine semantics are actually expressed in implementation terms.
+They explain how a world's rules, canonical objects, rendering, data
+bindings, and engine semantics are actually expressed in implementation
+terms.
 
 ### HDL World Implementation Specs
 

@@ -19,6 +19,21 @@ They only need to know the recipient's **HDL handle**.
 
 HDL resolves the rest.
 
+## Related Documents
+
+Parent world docs:
+- `_WORLD_OVERVIEW.md`
+- `RULES.md`
+
+Shared dependencies:
+- `../shared/WALLET_MODEL.md`
+- `../shared/ENGINE_PIPELINE.md`
+
+Sibling implementation docs:
+- `IDENTITY_ANCHOR.md`
+- `WORLD_TOPOLOGY.md`
+- `PROOF_ENGINE.md`
+
 ---
 
 ## Core Principle

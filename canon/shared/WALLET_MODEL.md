@@ -6,6 +6,19 @@ This document defines the wallet architecture used across the HDL ecosystem.
 
 The system operates across three distinct layers. These layers must remain conceptually separate.
 
+## Related Documents
+
+Parent navigation:
+- `../CANON_INDEX.md`
+
+Shared architecture siblings:
+- `ENGINE_PIPELINE.md`
+- `VISUALIZATION_RULES.md`
+
+World dependencies:
+- `../hdl_world/ROUTING_ENGINE.md`
+- `../hdl_world/IDENTITY_ANCHOR.md`
+
 ---
 
 # 1. Social Identity Layer

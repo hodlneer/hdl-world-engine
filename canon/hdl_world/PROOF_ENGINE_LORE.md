@@ -1,5 +1,18 @@
 # HDL World — Proof Engine (Lore Canon)
 
+## Related Documents
+
+Parent world docs:
+- `_WORLD_OVERVIEW.md`
+- `RULES.md`
+
+Implementation counterpart:
+- `PROOF_ENGINE.md`
+
+Sibling implementation docs:
+- `IDENTITY_ANCHOR.md`
+- `ROUTING_ENGINE.md`
+
 ## Why This Exists
 
 There was a time when crypto made no sense.

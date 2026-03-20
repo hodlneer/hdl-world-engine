@@ -17,6 +17,23 @@ Without this layer, BTC World is decorative.
 
 With this layer, BTC World becomes **truthful, alive, and educational**.
 
+## Related Documents
+
+Parent world docs:
+- `_WORLD_OVERVIEW.md`
+- `RULES.md`
+- `ENTITIES.md`
+
+Shared dependencies:
+- `../shared/ENGINE_PIPELINE.md`
+- `../shared/VISUALIZATION_RULES.md`
+- `../shared/PARTICLE_SYSTEMS.md`
+
+Sibling implementation docs:
+- `ENGINE_PIPELINE.md`
+- `RENDERING_IMPL.md`
+- `BTC_HEX_NETWORK_CANON_FULL_SPEC.md`
+
 ---
 
 ## Core Principle

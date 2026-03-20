@@ -4,6 +4,19 @@
 
 Particle systems form the Life Layer of the HDL engine. They convey motion, pressure and energy that would otherwise remain invisible. This document defines the canonical particle system types - Flow, Turbulence, Fields, Halos and Swarms - and explains how each should be used to represent network phenomena. All HDL worlds must follow these definitions to maintain consistency across experiences.
 
+## Related Documents
+
+Parent navigation:
+- `../CANON_INDEX.md`
+
+Shared architecture siblings:
+- `RENDERING_STRATEGY.md`
+- `LOD_STRATEGY.md`
+- `VISUALIZATION_RULES.md`
+
+World specializations:
+- `../btc_world/RENDERING_IMPL.md`
+
 ## Overview: What Is a Particle System?
 
 A particle system emits and animates thousands or millions of small sprites or points to create the illusion of a fluid or amorphous entity. In game engines, noise functions can add turbulence to a particle system, causing particles to follow chaotic patterns; low noise frequency yields smooth, slowly changing motion, while high frequency makes particles change direction rapidly. By combining noise with vector fields, you can steer particles along currents and draw intricate patterns. A vector field is simply a grid of vectors in space; each particle samples the vector at its position and receives a force in that direction, making all particles move along the field. Perlin noise can generate smooth vector fields where nearby vectors have similar directions, creating organic flows.

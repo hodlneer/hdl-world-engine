@@ -15,6 +15,24 @@ BTC World is not decorative.
 
 It is a **living visualization of the Bitcoin network**.
 
+## Related Documents
+
+Parent world docs:
+- `_WORLD_OVERVIEW.md`
+- `RULES.md`
+- `ENTITIES.md`
+
+Shared dependencies:
+- `../shared/VISUALIZATION_RULES.md`
+- `../shared/RENDERING_STRATEGY.md`
+- `../shared/LOD_STRATEGY.md`
+- `../shared/PARTICLE_SYSTEMS.md`
+
+Sibling implementation docs:
+- `ENGINE_PIPELINE.md`
+- `DATA_BINDING.md`
+- `BTC_HEX_NETWORK_CANON_FULL_SPEC.md`
+
 ---
 
 ## Core Interpretation

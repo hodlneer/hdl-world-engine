@@ -13,6 +13,23 @@ It bridges:
 
 This is the source of truth for all implementations.
 
+## Related Documents
+
+Parent world docs:
+- `_WORLD_OVERVIEW.md`
+- `RULES.md`
+- `ENTITIES.md`
+- `OD.md`
+
+Shared dependencies:
+- `../shared/VISUALIZATION_RULES.md`
+- `../shared/RENDERING_STRATEGY.md`
+
+Sibling implementation docs:
+- `ENGINE_PIPELINE.md`
+- `DATA_BINDING.md`
+- `RENDERING_IMPL.md`
+
 ---
 
 # 1. SYSTEM MODEL

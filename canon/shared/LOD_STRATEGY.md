@@ -4,6 +4,19 @@
 
 In the HDL universe, Level of Detail (LOD) is not just a performance trick - it is a storytelling mechanism. This strategy defines how objects and phenomena transition from abstract energy to concrete form as users move closer or focus their attention. By controlling LOD we balance performance, meaning, and immersion across all worlds. Proper LOD ensures that the world remains responsive at scale and that truth is revealed gracefully rather than abruptly.
 
+## Related Documents
+
+Parent navigation:
+- `../CANON_INDEX.md`
+
+Shared architecture siblings:
+- `RENDERING_STRATEGY.md`
+- `PARTICLE_SYSTEMS.md`
+- `VISUALIZATION_RULES.md`
+
+World specializations:
+- `../btc_world/RENDERING_IMPL.md`
+
 ## Principle: Distance Drives Revelation
 
 LOD ties rendering fidelity to both camera distance and user intent. Objects far away should communicate only broad energy and structure, while objects nearby must reveal precise geometry and interactivity. As the user zooms in, details emerge progressively - particles condense into shapes, patterns become grids, and ultimately discrete nodes become selectable. The user should never feel a hard swap between levels; instead they should experience a smooth emergence of truth.

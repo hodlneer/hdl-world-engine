@@ -6,6 +6,21 @@ Defines the system responsible for determining and validating a user's Genesis (
 
 This document is implementation-focused and intended for engineering.
 
+## Related Documents
+
+Parent world docs:
+- `_WORLD_OVERVIEW.md`
+- `RULES.md`
+
+Shared dependencies:
+- `../shared/WALLET_MODEL.md`
+- `../shared/ENGINE_PIPELINE.md`
+
+Sibling implementation docs:
+- `IDENTITY_ANCHOR.md`
+- `ROUTING_ENGINE.md`
+- `PROOF_ENGINE_LORE.md`
+
 ---
 
 ## Core Definition
