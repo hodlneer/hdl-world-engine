@@ -72,6 +72,7 @@ Files:
 /canon/shared/VISUALIZATION_RULES.md\
 /canon/shared/RENDERING_STRATEGY.md\
 /canon/shared/LOD_STRATEGY.md\
+/canon/shared/PARTICLE_SYSTEMS.md\
 /canon/shared/BRAND_SYSTEM.md
 
 Purpose:
@@ -94,6 +95,7 @@ shared/
     VISUALIZATION_RULES.md
     RENDERING_STRATEGY.md
     LOD_STRATEGY.md
+    PARTICLE_SYSTEMS.md
     BRAND_SYSTEM.md
 
 Description:
@@ -109,6 +111,8 @@ VISUALIZATION_RULES.md defines cross-world rules for how blockchain participatio
 RENDERING_STRATEGY.md defines the canonical layered rendering model balancing geometry, particles, and LOD across all HDL worlds.
 
 LOD_STRATEGY.md defines how canonical objects transition from abstract energy to precise geometry as distance and focus change.
+
+PARTICLE_SYSTEMS.md defines the Life Layer particle types and how motion, turbulence, fields, halos, and swarms should be used canonically.
 
 BRAND_SYSTEM.md preserves the emerging HDL brand ethos, emotional tone, and movement-level framing without overriding doctrinal canon.
 
