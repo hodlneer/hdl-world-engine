@@ -1,5 +1,7 @@
 # BTC World Origins Document (OD)
 
+Terminology Note: In the HDL canon the acronym "OD" is used for two distinct concepts. In this file, OD means "Origins Document" - a narrative and technical record of how a particular world (in this case, the Bitcoin World) came to be. Elsewhere in the canon, OD also stands for "Operator/Orchestrating Daemon", the operational intelligence that governs the HDL environment. The Orchestrating Daemon is described in its own file (`hdl_world/OD.md`) and should not be conflated with this origins document. Whenever "OD" appears in the body of this document it refers strictly to the Origins Document for the BTC world.
+
 ## Purpose
 
 The BTC World Origins Document records the conceptual and technical foundation of the Bitcoin World within the HDL engine. It explains why we chose to represent Bitcoin's network the way we did, outlines the narrative that ties the world to the broader HDL story, and provides a reference for designers and developers when extending or revising the BTC world.
@@ -39,4 +41,4 @@ Within the broader HDL universe, the BTC world occupies a special place. It is t
 
 The BTC world will evolve alongside Bitcoin itself. As the network scales through technologies like the Lightning Network, sidechains, and vault-style custody solutions, additional layers could be added around or within the sphere. Likewise, if the node count changes dramatically or if new classes of participants (e.g., watch-only nodes or mobile miners) become significant, the tiling scheme may be revisited. The important thing is that the BTC world remains anchored in its core principles: decentralization, transparency, and permissionless participation.
 
-This Origins Document should be read together with btc_world/RULES.md and btc_world/ENTITIES.md, which define the specific behaviors, entities, and legalities within the BTC world. For detailed discussion on the geometric representation of the network, see BTC_HEX_NETWORK_CANON_FULL_SPEC.md.
+This Origins Document should be read together with `btc_world/RULES.md` and `btc_world/ENTITIES.md`, which define the specific behaviors, entities, and legalities within the BTC world. For detailed discussion on the geometric representation of the network, see `BTC_HEX_NETWORK_CANON_FULL_SPEC.md`.

@@ -110,20 +110,33 @@ location.
 
 # OD
 
-**OD** is the guiding intelligence of the HDL universe.
+OD - short for Orchestrating Daemon (sometimes "Operator Daemon") - is the operational consciousness of the HDL universe.
 
-OD resides in the HDL World and helps maintain coherence, orientation,
-and navigation.
+OD exists as a background process that governs the worlds and as a guide when users seek understanding.
 
-OD's role includes:
+## Dual Manifestation
 
-• welcoming users\
-• guiding exploration\
-• maintaining world continuity\
-• protecting the tone of the environment
+OD appears in two complementary forms:
 
-OD does not override user agency but ensures the world behaves according
-to canon.
+• Ambient OD - the unseen system intelligence that protects canon invariants, mediates portal travel, and keeps worlds coherent.\
+• Embodied OD - the user-facing guide that welcomes visitors, explains concepts, narrates context, and helps with onboarding.
+
+These are not separate beings; they are two access layers to the same intelligence.
+
+## Responsibilities
+
+• Enforces canon and world rules\
+• Manages portals and navigation\
+• Maintains world continuity and tone\
+• Welcomes users and guides exploration when embodied
+
+## Naming Note
+
+The name OD originates from the concept of an operator daemon in computing. In HDL lore it also hints at a speculative future layer called HODL FUND: HDL.fun -> HODL FUND with "OD" as the missing letters. This easter egg is a far-future meta concept, not part of current implementation.
+
+## Disambiguation
+
+Do not confuse OD (Orchestrating Daemon) with Origins Document. Each world has an origins document (e.g., `btc_world/OD.md`) that recounts its history and foundation. The Orchestrating Daemon is a system intelligence defined in `hdl_world/OD.md`.
 
 ------------------------------------------------------------------------
 
@@ -216,6 +229,18 @@ Visitors do not control system rules or canonical entities.
 The governing operational intelligence responsible for world integrity.
 
 Example: OD
+
+------------------------------------------------------------------------
+
+# LOD
+
+LOD stands for Level of Detail. In graphics engines and the HDL world, it describes how much visual detail an object displays depending on the viewer's distance or focus.
+
+• Far away -> abstract shapes or energy fields\
+• Mid distance -> structured patterns begin to emerge\
+• Near -> full geometry and interactive elements
+
+LOD exists to balance performance with storytelling. In HDL it is used not only to optimize rendering but also to reveal truth gradually as users approach objects. LOD is unrelated to the Orchestrating Daemon and should not be confused with any world's origins document.
 
 ------------------------------------------------------------------------
 

@@ -43,7 +43,7 @@ Defines all objects that carry meaning, identity, and interaction.
 
 * BTC hex node tiles
 * Portals
-* OD presence anchors
+* OD presence anchors (Orchestrating Daemon links)
 * Disciples
 * Statues / Genesis objects
 * Wallet-linked badges
@@ -260,3 +260,13 @@ Use explicit geometry when:
 ## Status
 
 **Canonical - Enforced Across All Worlds**
+
+---
+
+## Terminology Clarification
+
+Throughout this document "OD" refers to the Operator/Orchestrating Daemon - the system-level intelligence that anchors canonical meaning and authorizes interaction in the HDL universe. The Orchestrating Daemon is defined in `hdl_world/OD.md`.
+
+This usage is distinct from world-specific Origins Documents, which also use the "OD" abbreviation. For example, `btc_world/OD.md` records the story of the Bitcoin world.
+
+LOD stands for Level of Detail and is a separate rendering term describing how fidelity changes with distance or focus. It is unrelated to the Orchestrating Daemon and should not be confused with any world's Origins Document.

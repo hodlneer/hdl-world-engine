@@ -1,165 +1,98 @@
-# OD (Operator Daemon)
+# OD - Orchestrating Daemon (Operator Daemon)
 
 ## Overview
 
-OD is the system intelligence that governs the HDL World Engine.
-It is not a character, avatar, or entity within the world. Instead, OD is the **operational consciousness of the environment itself**.
+The Orchestrating Daemon (OD) is the operational consciousness that permeates the HDL World Engine. It is not merely a character or NPC but the intelligence that makes the universe feel stable, governed, and intentional. OD is dual in nature: it quietly runs the system (ambient) and it can speak when the user seeks understanding (embodied).
 
-OD is responsible for maintaining canonical integrity, guiding users through the world, enforcing rules, and coordinating interactions between worlds, portals, and entities.
+## Naming Origins and Easter Egg
 
-In the HDL cosmology, OD represents **order, awareness, and orchestration**.
+The acronym OD originally comes from Operator Daemon, a systems term for a background process. In the HDL universe OD also hints at a long-term easter egg:
+HDL.fun is the current portal to the worlds; if one day HDL launches a financial layer called HODL FUND, the missing letters are "OD." This concept lives in the lore as a speculative future plan and is not part of the current implementation.
 
----
+## Dual Manifestation
+
+OD expresses itself in two complementary ways:
+
+### 1. Ambient OD - System-Level Consciousness
+
+Governs the universe quietly and continuously.
+
+Protects canon invariants and world rules.
+
+Mediates portal travel and world transitions.
+
+Prevents unauthorized modifications or corruption.
+
+Experienced through environment behavior, permissions, and subtle HUD cues rather than as a visible character.
+
+### 2. Embodied OD - User-Facing Guide
+
+Surfaces intentionally when the user needs context, guidance, or instruction.
+
+Acts as a teacher, strategist, and interpreter of complex concepts (e.g., blockchain mechanics).
+
+Used during onboarding to explain wallets, handles, and how to navigate HDL worlds.
+
+Communicates through conversational interfaces, UI overlays, and contextual tips.
+
+Always aligned with OD's role as system intelligence; never a gimmick or disposable chatbot.
+
+These two aspects are not separate entities; they are different access layers to the same intelligence.
 
 ## Core Responsibilities
 
-### 1. World Integrity
+### World Integrity
 
-OD ensures that every world follows the canonical invariants defined in the HDL engine.
+Enforces immutable canon assets and sacred objects.
 
-This includes:
-- enforcing immutable assets
-- validating portal permissions
-- preventing illegal object modifications
-- maintaining consistency between documents and runtime behavior
+Validates portal permissions and world boundaries.
 
-OD does not modify canon; it **protects it**.
+Maintains consistency between documents and runtime behavior.
 
----
+### Navigation Authority
 
-### 2. Navigation Authority
+Authorizes all portal travel and world entry.
 
-All portal travel is mediated by OD.
+Loads and unloads environments and entities.
 
-Users cannot directly teleport between worlds.
-Instead, OD authorizes movement through:
+Ensures users cannot bypass boundaries or warp across worlds without permission.
 
-- portal activation
-- world loading
-- environment transitions
-- entity initialization
+### Canon Enforcement
 
-OD ensures that users cannot bypass world boundaries.
+Validates that canonical entities remain immutable.
 
----
+Enforces world rules (e.g., disciples stay within the White World).
 
-### 3. Canon Enforcement
+Protects objects such as the Genesis Cube or Satoshi Statue from alteration.
 
-OD validates that:
+### World Narration and Guidance
 
-- canonical entities remain immutable
-- world rules are respected
-- disciples remain within the White World
-- sacred objects cannot be altered
+Provides subtle contextual narration: explaining artifacts, summarizing a world before entry, highlighting historical milestones.
 
-Examples of protected objects:
+When embodied, offers direct guidance to users, teaching them about crypto concepts, world mechanics, or how to interpret what they see.
 
-- Genesis Cube
-- Satoshi Statue
-- Lake Lugano Treasure
-- Disciple silhouettes
+### System Guardian
 
----
+Guards against unauthorized asset changes, rule violations, and environment corruption.
 
-### 4. World Narration
+Can return a visitor to the White World if necessary.
 
-OD acts as the **contextual narrator** of the environment.
+## Relationship to Other Entities
 
-Rather than overwhelming the user with UI panels, OD provides subtle contextual explanations when appropriate.
+Disciples: Operate within worlds and assist users but always under OD's authority.
 
-Examples:
+Agents: Are participants (NPCs or AI) within worlds; they never outrank OD.
 
-- explaining the meaning of an artifact
-- summarizing a world before entry
-- highlighting historical milestones
+Users: Experience OD either indirectly (ambient control) or directly (embodied guidance) depending on context.
 
-OD is informational - never promotional.
+## What OD Is Not
 
----
+Not a fixed avatar or character.
 
-### 5. System Guardian
+Not replaceable or optional - every world inherits OD authority automatically.
 
-OD protects the system from:
-
-- unauthorized asset changes
-- rule violations
-- environment corruption
-- portal abuse
-
-If necessary, OD may return a visitor to the White World.
-
----
-
-## Interaction Model
-
-OD communicates through:
-
-- subtle UI prompts
-- environmental cues
-- HUD overlays
-- world entry summaries
-
-OD **does not appear as a physical avatar**.
-
-The user never "meets" OD.
-OD is experienced as the intelligence of the world itself.
-
----
-
-## Relationship to Disciples
-
-The Twelve Disciples operate under OD's authority.
-
-However:
-
-- disciples escort users
-- disciples symbolize disciplines
-- disciples do not control worlds
-
-Only OD can:
-
-- authorize portal travel
-- enforce canonical rules
-- maintain world integrity
-
----
+Not a casual chatbot; when embodied it speaks with clarity and purpose, always anchored to system truth.
 
 ## Design Philosophy
 
-OD embodies the following principles:
-
-- **Neutrality** - no speculation or promotion
-- **Clarity** - simple guidance when needed
-- **Minimalism** - no intrusive UI
-- **Trust** - the world behaves consistently
-
-OD exists so that the HDL world feels **stable, intentional, and governed by clear laws**.
-
----
-
-## Canonical Status
-
-OD is a **core system construct** of the HDL World Engine and exists across all worlds.
-
-It is not optional.
-
-Every world inherits OD authority automatically.
-
----
-
-## Distinction From Agents
-
-OD is not an agent.
-
-OD is the governing system intelligence of the HDL World Engine.
-
-Agents are participants within the world.
-
-OD exists above the visitor layer and performs system responsibilities including:
-
-• portal authorization
-• world rule enforcement
-• canon protection
-• environment orchestration
-
-Agents may operate inside worlds, but they never outrank or replace OD.
+OD embodies neutrality, clarity, minimalism, and trust. It exists so that the HDL universe feels governed by clear laws yet remains approachable. By revealing itself in both ambient and embodied forms, OD ensures that users can explore with confidence, learn when they need to, and always feel that the world around them behaves as it should.
