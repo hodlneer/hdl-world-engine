@@ -70,6 +70,7 @@ Files:
 /canon/shared/AGENTS.md\
 /canon/shared/WALLET_MODEL.md\
 /canon/shared/VISUALIZATION_RULES.md\
+/canon/shared/RENDERING_STRATEGY.md\
 /canon/shared/BRAND_SYSTEM.md
 
 Purpose:
@@ -90,6 +91,7 @@ shared/
     AGENTS.md
     WALLET_MODEL.md
     VISUALIZATION_RULES.md
+    RENDERING_STRATEGY.md
     BRAND_SYSTEM.md
 
 Description:
@@ -101,6 +103,8 @@ Agents participate in the visitor layer but are not canonical authorities or sym
 WALLET_MODEL.md defines the identity, routing, and blockchain wallet layer model used across the HDL ecosystem.
 
 VISUALIZATION_RULES.md defines cross-world rules for how blockchain participation is rendered in HDL environments.
+
+RENDERING_STRATEGY.md defines the canonical layered rendering model balancing geometry, particles, and LOD across all HDL worlds.
 
 BRAND_SYSTEM.md preserves the emerging HDL brand ethos, emotional tone, and movement-level framing without overriding doctrinal canon.
 
@@ -155,6 +159,7 @@ These rules must follow both the world overview and the universal rules.
 Examples:
 
 /canon/hdl_world/OD.md\
+/canon/btc_world/OD.md\
 /canon/hdl_world/DISCIPLES.md\
 /canon/btc_world/BTC_HEX_NETWORK_CANON.md\
 /canon/btc_world/SATOSHI.md\
@@ -215,7 +220,8 @@ Key entities include:
 • Satoshi Nakamoto\
 • Genesis block structures\
 • mining constructs\
-• BTC hex network canon
+• BTC hex network canon\
+• BTC origins document
 
 This world visualizes the Bitcoin network and its historical identity.
 
