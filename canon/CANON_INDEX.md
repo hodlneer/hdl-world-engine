@@ -1,377 +1,233 @@
-# HDL Canon --- Index
+# HDL Canon — Index (Revised)
 
-This document is the **map of the HDL universe**.
+This document serves as the map of the HDL universe. It explains how the canon repository is structured, how
+authority flows between documents, and where to look when you need to
+understand or extend the HDL World Engine. Anyone building,
+interpreting or extending the system should begin here.
 
-It explains how the canon repository is structured and how authority
-flows between documents.
+The canon has matured significantly since its inception. In addition to
+doctrine and rules, it now contains a growing set of systems — such as
+the Proof Engine, Identity Anchor, Routing Engine and Brand System —
+that form the core of the HDL product. This index reflects those
+additions and clarifies how the pieces fit together.
 
-Anyone building, extending, or interpreting the HDL World Engine should
-begin here.
+## Canon Authority Layers
 
-------------------------------------------------------------------------
+Canonical truth in HDL flows through five layers of doctrinal
+authority. Higher layers override lower layers. Implementation
+documents, diagrams and brand materials must respect this hierarchy.
 
-# Canon Structure
+- Canon Invariants – `/canon/shared/CANON_INVARIANTS.md`
+  The constitutional truths of the HDL universe (e.g. “HDL is the
+  central world”, “HDL is permanently safe”). These rarely change
+  without redefining HDL itself.
+- Universal Rules – `/canon/shared/UNIVERSAL_RULES.md` and related
+  documents
+  Cross-world rules for portals, terminology, agents, rendering,
+  wallet behaviour and visualisation. Every world must conform to
+  these rules.
+- World Doctrine – `_WORLD_OVERVIEW.md` files
+  Each world has its own overview defining its identity, spatial and
+  temporal models, atmosphere and mood. Examples: `/canon/hdl_world/_WORLD_OVERVIEW.md`,
+  `/canon/btc_world/_WORLD_OVERVIEW.md`.
+- World Rules – `RULES.md` files
+  Operational rules specific to each world (movement, interaction,
+  safety, consequences). These must follow both the world overview
+  and the universal rules.
+- Canonical Objects & Entities
+  World-specific canonical objects, origins records, system
+  intelligence documents and symbolic entities. Examples: `OD.md`,
+  `ENTITIES.md`, `DISCIPLES.md`, `BTC_HEX_NETWORK_CANON.md`, etc.
+  These files are subordinate to all layers above.
 
-The HDL canon is organized in **five layers of doctrinal authority**.
+In addition to the doctrinal stack, the repository contains shared
+architecture specifications, world implementation specs, and
+meta-governance/navigation documents. These supporting documents do
+not outrank doctrine but are part of the canon and must remain
+consistent with it.
 
-Higher layers override lower layers.
+## Meta Documents
 
-1.  CANON_INVARIANTS.md
-2.  UNIVERSAL_RULES.md
-3.  WORLD_OVERVIEW.md
-4.  RULES.md
-5.  ENTITY FILES
+These files help govern and navigate the canon repository, but they do
+not carry doctrinal authority themselves:
 
-This hierarchy governs **truth and doctrine**.
+- `CANON_INDEX.md` – the document you are reading. It maps the
+  entire canon.
+- `CANON_AUTHORITY.md` – explains how authority and change flow
+  through the canon. It defines who can propose updates and how
+  doctrine evolves.
 
-In addition to the doctrinal stack, the repository also contains:
+## Shared Architecture
 
-• shared architecture documents\
-• world-specific implementation specifications\
-• meta-governance and navigation documents
+These documents define engine-level, rendering-level and
+cross-world implementation architecture shared by all worlds. They do
+not replace doctrine but provide canonical building blocks used by
+world-specific implementations.
 
-These supporting documents do not outrank doctrine, but they are part of
-the canonical system and must remain consistent with it.
+| File | Purpose |
+| --- | --- |
+| `/canon/shared/ENGINE_PIPELINE.md` | Defines the universal pipeline by which data, identity and signalling move from chain inputs through geometry, particles, LOD and rendered output. World-specific engine docs (e.g. `btc_world/ENGINE_PIPELINE.md`) must inherit from this pipeline rather than redefine it. |
+| `/canon/shared/WALLET_MODEL.md` | Specifies the cross-chain wallet model used throughout HDL. It describes identity handles, wallet linking, asset compatibility and routing prerequisites. |
+| `/canon/shared/VISUALIZATION_RULES.md` | Defines how blockchain participation and canonical objects are visualised. This includes particle types, motion and halo usage, and how distance and focus affect representation. |
+| `/canon/shared/RENDERING_STRATEGY.md` | Lays out the layered rendering model balancing geometry, particles and LOD across all worlds. |
+| `/canon/shared/LOD_STRATEGY.md` | Describes how canonical objects transition from abstract energy to precise geometry as distance and focus change. |
+| `/canon/shared/PARTICLE_SYSTEMS.md` | Defines the Life Layer particle types and their behaviours (motion, turbulence, fields, halos, swarms). |
+| `/canon/shared/BRAND_SYSTEM.md` | Preserves emerging brand ethos, emotional tone and philosophical framing. This document explores what HDL means and how it feels; it does not override doctrine or architecture. |
 
-------------------------------------------------------------------------
+## Layer 1 – Canon Invariants
 
-# Meta Documents
+File: `/canon/shared/CANON_INVARIANTS.md`
 
-The following documents help govern and navigate the canon repository,
-but are not part of the doctrinal authority stack:
-
-• CANON_INDEX.md\
-• CANON_AUTHORITY.md
-
-------------------------------------------------------------------------
-
-# Shared Architecture
-
-These documents define engine-level, rendering-level, and cross-world
-implementation architecture shared by all worlds.
-
-Files:
-
-/canon/shared/ENGINE_PIPELINE.md\
-/canon/shared/WALLET_MODEL.md\
-/canon/shared/VISUALIZATION_RULES.md\
-/canon/shared/RENDERING_STRATEGY.md\
-/canon/shared/LOD_STRATEGY.md\
-/canon/shared/PARTICLE_SYSTEMS.md
-
-Purpose:
-
-Defines how HDL systems move from data and identity into geometry,
-particles, LOD, interaction, and rendered output.
-
-These files are canonical architecture, but they remain subordinate to
-the doctrinal hierarchy above.
-
-------------------------------------------------------------------------
-
-# Layer 1 --- Canon Invariants
-
-File:
-
-/canon/shared/CANON_INVARIANTS.md
-
-Purpose:
-
-Defines the **constitutional truths of the HDL universe**.
-
-These rules never change without redefining HDL itself.
-
-Examples include:
-
-• HDL is the central world\
-• HDL is permanently safe\
-• Worlds remain separate\
-• Portals are the only travel mechanism
-
+Defines the constitutional truths of the HDL universe. Examples
+include: “HDL is the central world”, “HDL is permanently safe”,
+“worlds remain separate”, and “portals are the only travel mechanism”.
 All other documents must comply with these invariants.
 
-------------------------------------------------------------------------
-
-# Layer 2 --- Universal Rules
+## Layer 2 – Universal Rules
 
 Files:
 
-/canon/shared/UNIVERSAL_RULES.md\
-/canon/shared/PORTALS.md\
-/canon/shared/GLOSSARY.md\
-/canon/shared/AGENTS.md\
-/canon/shared/WALLET_MODEL.md\
-/canon/shared/VISUALIZATION_RULES.md\
-/canon/shared/RENDERING_STRATEGY.md\
-/canon/shared/LOD_STRATEGY.md\
-/canon/shared/PARTICLE_SYSTEMS.md\
-/canon/shared/BRAND_SYSTEM.md
+- `/canon/shared/UNIVERSAL_RULES.md`
+- `/canon/shared/PORTALS.md`
+- `/canon/shared/GLOSSARY.md`
+- `/canon/shared/AGENTS.md`
+- `/canon/shared/WALLET_MODEL.md`
+- `/canon/shared/VISUALIZATION_RULES.md`
+- `/canon/shared/RENDERING_STRATEGY.md`
+- `/canon/shared/LOD_STRATEGY.md`
+- `/canon/shared/PARTICLE_SYSTEMS.md`
+- `/canon/shared/BRAND_SYSTEM.md`
 
 Purpose:
 
-Defines rules that apply **across all worlds**.
+Defines rules that apply across all worlds. These govern how worlds
+connect, how portals operate, what terminology means, how agents are
+bounded, how identity and wallets behave, and how objects render.
+Every world and system must follow these universal rules.
 
-Examples:
+## Layer 3 – World Doctrine
 
-• how worlds connect\
-• portal travel rules\
-• terminology used across the universe
+Each world defines its own world overview (`_WORLD_OVERVIEW.md`).
+This document explains the identity, spatial model, time model,
+atmosphere and mood of the world. It provides the narrative and
+philosophical context for that world. Examples:
 
-These rules govern the behavior of the entire system.
+- `/canon/hdl_world/_WORLD_OVERVIEW.md` (HDL World – the safe central environment)
+- `/canon/btc_world/_WORLD_OVERVIEW.md` (Bitcoin World – the Bitcoin ecosystem)
 
-Additional shared canon:
+## Layer 4 – World Rules
 
-shared/
-    AGENTS.md
-    WALLET_MODEL.md
-    VISUALIZATION_RULES.md
-    RENDERING_STRATEGY.md
-    LOD_STRATEGY.md
-    PARTICLE_SYSTEMS.md
-    BRAND_SYSTEM.md
+Files: `/canon/hdl_world/RULES.md`, `/canon/btc_world/RULES.md` (and
+future worlds).
 
-Description:
+Defines the operational rules for each world: movement constraints,
+interaction mechanics, safety systems and consequences. These rules
+must follow both the world overview and the universal rules.
 
-Defines the role, permissions, and constraints of AI agents operating within the HDL ecosystem.
+## Layer 5 – World-Specific Canon Objects
 
-Agents participate in the visitor layer but are not canonical authorities or symbolic entities.
-
-WALLET_MODEL.md defines the identity, routing, and blockchain wallet layer model used across the HDL ecosystem.
-
-VISUALIZATION_RULES.md defines cross-world rules for how blockchain participation is rendered in HDL environments.
-
-RENDERING_STRATEGY.md defines the canonical layered rendering model balancing geometry, particles, and LOD across all HDL worlds.
-
-LOD_STRATEGY.md defines how canonical objects transition from abstract energy to precise geometry as distance and focus change.
-
-PARTICLE_SYSTEMS.md defines the Life Layer particle types and how motion, turbulence, fields, halos, and swarms should be used canonically.
-
-BRAND_SYSTEM.md preserves the emerging HDL brand ethos, emotional tone, and movement-level framing without overriding doctrinal canon.
-
-------------------------------------------------------------------------
-
-# Layer 3 --- World Doctrine
-
-Each world defines its own **world overview**.
-
-Examples:
-
-/canon/hdl_world/\_WORLD_OVERVIEW.md\
-/canon/btc_world/\_WORLD_OVERVIEW.md
-
-Purpose:
-
-Explains:
-
-• the identity of the world\
-• spatial model\
-• time model\
-• atmosphere and mood
-
-This document defines how the world should feel and exist.
-
-------------------------------------------------------------------------
-
-# Layer 4 --- World Rules
-
-Files:
-
-/canon/hdl_world/RULES.md\
-/canon/btc_world/RULES.md
-
-Purpose:
-
-Defines the **operational rules of each world**.
-
+Worlds define canonical objects, origins documents and entity lists.
 Examples include:
 
-• movement constraints\
-• interaction rules\
-• safety mechanics\
-• consequences within that world
+- `/canon/hdl_world/OD.md` – the Orchestrating Daemon (universal
+  intelligence layer). Defines how OD guides and interprets rather
+  than decides.
+- `/canon/hdl_world/DISCIPLES.md` – the Twelve Disciples representing
+  disciplines like cryptography, DeFi and on-chain art.
+- `/canon/btc_world/OD.md` – the Bitcoin origins document.
+- `/canon/btc_world/SATOSHI.md` – defines Satoshi in canon.
+- `/canon/btc_world/BTC_HEX_NETWORK_CANON.md` – describes the hex-sphere
+  representation of the Bitcoin network.
+- `/canon/btc_world/ENTITIES.md` – enumerates BTC World entities
+  (blocks, nodes, miners, etc.).
 
-These rules must follow both the world overview and the universal rules.
+These files must obey the world rules, world overview, universal rules
+and canon invariants.
 
-------------------------------------------------------------------------
+## World Implementation Specifications
 
-# Layer 5 --- World-Specific Canon Objects
-
-Examples:
-
-/canon/hdl_world/OD.md\
-/canon/btc_world/OD.md\
-/canon/hdl_world/DISCIPLES.md\
-/canon/btc_world/BTC_HEX_NETWORK_CANON.md\
-/canon/btc_world/SATOSHI.md\
-/canon/btc_world/ENTITIES.md
-
-Purpose:
-
-Defines the **world-specific canonical objects, origins records, system
-intelligence documents, and symbolic entities** that exist within a world.
-
-These files must obey:
-
-• world rules\
-• world overview\
-• universal rules\
-• canon invariants
-
-------------------------------------------------------------------------
-
-# World Implementation Specs
-
-These files specialize the shared architecture for a specific world.
-
-They do not replace doctrine.
-
-They explain how a world's rules, canonical objects, rendering, data
-bindings, and engine semantics are actually expressed in implementation
-terms.
+Implementation specs specialise the shared architecture for a specific
+world. They do not replace doctrine; instead they explain how a
+world’s rules, canonical objects, rendering, data bindings and engine
+semantics are expressed in concrete terms.
 
 ### HDL World Implementation Specs
 
-/canon/hdl_world/IDENTITY_ANCHOR.md\
-/canon/hdl_world/ROUTING_ENGINE.md\
-/canon/hdl_world/WORLD_TOPOLOGY.md\
-/canon/hdl_world/PROOF_ENGINE.md\
-/canon/hdl_world/PROOF_ENGINE_LORE.md
+| File | Purpose |
+| --- | --- |
+| `/canon/hdl_world/IDENTITY_ANCHOR.md` | Defines how a user’s HDL handle is anchored in the world. It bridges the handle, linked wallets, Proof Engine output and spatial representation, determining where and how a user appears in the universe. |
+| `/canon/hdl_world/ROUTING_ENGINE.md` | Specifies how HDL resolves a handle into the correct wallet, chain and execution path. It makes “send BTC to @grandma” work without requiring the sender to understand chain nuances. It prioritises safety, determinism and asset correctness before cost optimisation. |
+| `/canon/hdl_world/WORLD_TOPOLOGY.md` | Describes the topological structure of HDL World, including portals, horizons, spaces and flows. |
+| `/canon/hdl_world/PROOF_ENGINE.md` | Defines the system that determines and validates a user’s Genesis (On-Chain Since) and conviction. It establishes badge tiers (claimed, social, on-chain) and processes data from on-chain and off-chain sources. |
+| `/canon/hdl_world/PROOF_ENGINE_LORE.md` | Provides narrative context and philosophy for the Proof Engine. It explains why conviction matters and how it shapes identity. |
 
-Purpose:
+### Bitcoin World Implementation Specs
 
-Defines how HDL identity, routing, topology, and proof systems work
-inside the central world.
+| File | Purpose |
+| --- | --- |
+| `/canon/btc_world/ENGINE_PIPELINE.md` | Specialises the universal engine pipeline for BTC World. It adapts shared stages to Bitcoin data, defines world-specific rendering targets (DOM, 3D, VR) and explains how hexes and particle flows represent transactions. This file must reference `../shared/ENGINE_PIPELINE.md` as its parent pipeline. |
+| `/canon/btc_world/DATA_BINDING.md` | Describes how Bitcoin network data (blocks, transactions, mempool) binds to visual metrics like position, colour and motion. |
+| `/canon/btc_world/RENDERING_IMPL.md` | Explains how BTC World implements rendering using instancing, camera behaviour and performance strategies across 2D, 3D and VR targets. |
+| `/canon/btc_world/BTC_HEX_NETWORK_CANON_FULL_SPEC.md` | Provides a full technical specification of the hex-sphere representation of the Bitcoin network, including coordinate systems, clustering, adjacency and rendering details. |
 
-### BTC World Implementation Specs
+## Current Worlds
 
-/canon/btc_world/ENGINE_PIPELINE.md\
-/canon/btc_world/DATA_BINDING.md\
-/canon/btc_world/RENDERING_IMPL.md\
-/canon/btc_world/BTC_HEX_NETWORK_CANON_FULL_SPEC.md
-
-Purpose:
-
-Defines how Bitcoin-specific data, rendering, and participation models
-inherit from shared architecture and become concrete in BTC World.
-
-------------------------------------------------------------------------
-
-# Current Worlds
-
-The HDL universe currently defines the following worlds.
+The HDL universe currently defines two worlds. Each world resides in its own
+folder under `/canon/` and contains doctrine, rules, entity lists and
+implementation specs.
 
 ### HDL World
 
-Location:
-
-/canon/hdl_world/
-
-Purpose:
-
-The central environment of the universe.
-
-Contains:
-
-• the helmet interior\
-• OD\
-• the Twelve Disciples\
-• wallet identity\
-• navigation portals
-
-HDL is the safe hub connecting all ecosystems.
-
-Core doctrine:
-
-• /canon/hdl_world/_WORLD_OVERVIEW.md\
-• /canon/hdl_world/RULES.md\
-• /canon/hdl_world/ENTITIES.md\
-• /canon/hdl_world/OD.md\
-• /canon/hdl_world/DISCIPLES.md
-
-Supporting implementation docs:
-
-• /canon/hdl_world/IDENTITY_ANCHOR.md\
-• /canon/hdl_world/ROUTING_ENGINE.md\
-• /canon/hdl_world/WORLD_TOPOLOGY.md\
-• /canon/hdl_world/PROOF_ENGINE.md\
-• /canon/hdl_world/PROOF_ENGINE_LORE.md
-
-------------------------------------------------------------------------
+Location: `/canon/hdl_world/`
+Purpose: The safe central environment of the universe. It contains
+the helmet interior, OD, the Twelve Disciples, wallet identity
+mapping and navigation portals. HDL is the hub connecting all
+ecosystems.
+Core doctrine: `_WORLD_OVERVIEW.md`, `RULES.md`, `ENTITIES.md`, `OD.md`, `DISCIPLES.md`.
+Supporting implementation docs: `IDENTITY_ANCHOR.md`,
+`ROUTING_ENGINE.md`, `WORLD_TOPOLOGY.md`, `PROOF_ENGINE.md`,
+`PROOF_ENGINE_LORE.md`.
 
 ### Bitcoin World
 
-Location:
+Location: `/canon/btc_world/`
+Purpose: Represents the Bitcoin ecosystem. Key entities include
+Satoshi Nakamoto, Genesis block structures, mining constructs, the BTC
+hex network and the Bitcoin origins document.
+Core doctrine: `_WORLD_OVERVIEW.md`, `RULES.md`, `ENTITIES.md`,
+`OD.md`, `BTC_HEX_NETWORK_CANON.md`, `SATOSHI.md`.
+Supporting implementation docs: `ENGINE_PIPELINE.md`,
+`DATA_BINDING.md`, `RENDERING_IMPL.md`, `BTC_HEX_NETWORK_CANON_FULL_SPEC.md`.
 
-/canon/btc_world/
+## Future Worlds
 
-Purpose:
+Additional worlds will be introduced over time (e.g. Ethereum World,
+XRP World, Solana World). Each new world must include at minimum:
 
-Represents the Bitcoin ecosystem.
+- `_WORLD_OVERVIEW.md`
+- `RULES.md`
+- `ENTITIES.md`
+- any world-specific objects (e.g. origins document, key entities)
+- implementation specs that specialise the shared architecture for that
+  world
 
-Key entities include:
+All worlds must connect through HDL and respect the universal rules and
+canon invariants.
 
-• Satoshi Nakamoto\
-• Genesis block structures\
-• mining constructs\
-• BTC hex network canon\
-• BTC origins document
+## Canon Update Process
 
-Supporting implementation docs include:
+Canon evolves through a deliberate, transparent process:
 
-• /canon/btc_world/ENGINE_PIPELINE.md\
-• /canon/btc_world/DATA_BINDING.md\
-• /canon/btc_world/RENDERING_IMPL.md\
-• /canon/btc_world/BTC_HEX_NETWORK_CANON_FULL_SPEC.md
+- Discovery occurs through discussion, exploration and usage.
+- Proposed doctrine is drafted and reviewed.
+- Canon documents are updated via pull requests and community
+  consensus.
+- The repository becomes the official source of truth. If
+  conversation and repository disagree, the repository wins.
 
-This world visualizes the Bitcoin network and its historical identity.
+## Final Principle
 
-------------------------------------------------------------------------
-
-# Future Worlds
-
-Additional worlds will be introduced over time.
-
-Examples may include:
-
-• Ethereum World\
-• XRP World\
-• Solana World
-
-Each world must include:
-
-• WORLD_OVERVIEW.md\
-• RULES.md\
-• ENTITIES.md
-
-All worlds must connect through HDL.
-
-------------------------------------------------------------------------
-
-# Canon Update Process
-
-Canon evolves through a deliberate process.
-
-1.  Discovery occurs through discussion and exploration
-2.  Proposed doctrine is drafted
-3.  Canon documents are updated
-4.  The repository becomes the official source of truth
-
-If conversation and repository disagree:
-
-The repository wins.
-
-------------------------------------------------------------------------
-
-# Final Principle
-
-The HDL World Engine is not a codebase.
-
-It is the **constitution of a universe**.
-
-Technology may change.
-
-Rendering engines may evolve.
-
-New worlds may appear.
-
-Canon remains the anchor.
+The HDL World Engine is not merely a codebase. It is the constitution of
+a universe. Technology may change, rendering engines may evolve, and
+new worlds may appear. Canon remains the anchor that keeps the system
+coherent, safe and meaningful. Maintain it with care.
