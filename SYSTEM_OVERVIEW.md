@@ -2,38 +2,89 @@
 
 ## Purpose
 
-This document explains the purpose of the parent repository and the role of its major directories.
+This document explains the purpose of this repository and the role of its major directories.
 
-`hdl-universe` is not the product repository. It is the architecture and doctrine repository that defines:
+`hdl-universe` is the **governance, canon, and orchestration vault** for the HDL ecosystem. It is the long-term source of truth and continuity layer that preserves canon, captures decisions, defines organizational structure, and keeps strategy aligned with execution over time.
 
-- canonical truth
-- translation from canon into product requirements
-- planning context for future system evolution
+This repo is not the product codebase. It is the knowledge layer that everything else derives from.
 
-HDL is a multi-layered system composed of:
+HDL is a multi-layered ecosystem composed of:
 
-- Canon (truth layer)
-- Bridge (translation layer)
-- Planning (roadmap and design layer)
-- Product (execution layer, in child repos)
+- **Governance and Canon** — truth, doctrine, principles, and invariants (this repo)
+- **Orchestration** — organizational structure, routing, and execution management (Paperclip)
+- **Task tracking** — active work, epics, status, and progress (Notion)
+- **Product execution** — implementation (child repos)
+
+---
+
+## Ecosystem Operating Model
+
+### HDL Universe / Obsidian — Truth and Continuity
+
+This repository is the long-term knowledge layer.
+
+It holds:
+- canon and doctrine
+- governance and principles
+- decisions and rationale
+- personas and user lenses
+- Paperclip organizational design
+- high-level agent definitions
+- bridge documents into implementation repos
+- execution feedback summaries
+
+It is intended to be opened as an Obsidian vault for local-first, version-controlled knowledge work.
+
+### Paperclip — Orchestration and Execution Routing
+
+Paperclip is the organizational execution layer.
+
+It is where company structure, roles, task routing, and operational follow-through become active. This repo defines what Paperclip must operate within — the principles, org structure, and agent boundaries. Paperclip carries that into motion.
+
+### Notion — Active Task and Project Tracking
+
+Notion is the project management layer, similar to Jira.
+
+Active epics, tasks, owners, statuses, and blockers live in Notion. This repo maintains high-level visibility into Notion so the governance layer stays aware of real implementation progress over time.
+
+### Product Repos — Implementation
+
+Product code belongs in child repositories.
+
+Current execution repos:
+- `hdl_react` — frontend experience
+- `hdl-node-backend-api` — backend platform
+
+Those repositories execute the system. This repository defines the truth they must align to.
+
+---
 
 ## Repository Structure
 
-At the top level, this repository is organized around:
+The vault is organized across the following top-level directories:
 
-- `02_canon/`
-- `08_bridges/`
-- `01_governance/` for principles, decisions, and constraints
-- root guidance documents such as `SYSTEM_OVERVIEW.md`
+### `01_governance/`
+
+Principles, constraints, decisions, vision, and terminology that keep the system aligned over time.
+
+What lives here:
+- directional vision
+- operating principles
+- explicit decisions and rationale
+- system constraints
+- shared terminology definitions
+
+Key principle:
+
+> Governance defines what must remain true as the system evolves.
 
 ### `02_canon/`
 
-The `02_canon/` directory defines truth.
+The source of truth for how HDL must behave.
 
 It contains the rules, entities, world structure, identity model, and invariant system behavior that HDL must follow. Product limitations do not redefine canon.
 
-Examples of what lives here:
-
+What lives here:
 - identity doctrine
 - routing doctrine
 - proof doctrine
@@ -45,12 +96,38 @@ Key principle:
 
 > Canon defines how the system must behave.
 
+### `06_paperclip/`
+
+High-level organizational design for the Paperclip execution layer.
+
+What lives here:
+- org structure definitions
+- role and responsibility definitions
+- workflow patterns
+- operating model
+
+Key principle:
+
+> Paperclip structure is defined here before it becomes operational.
+
+### `07_agents/`
+
+High-level definitions for AI and human agents operating within the ecosystem.
+
+What lives here:
+- executive agent definitions
+- domain agent scopes
+- agent interaction patterns
+
+Key principle:
+
+> Agent boundaries are defined in governance, not improvised at runtime.
+
 ### `08_bridges/`
 
-The `08_bridges/` directory translates canonical truth into implementation strategy.
+Translation from canonical truth into implementation strategy.
 
 It is where doctrine is mapped into:
-
 - frontend integration plans
 - backend integration plans
 - implementation gap analysis
@@ -62,29 +139,33 @@ Key principle:
 
 > Bridge converts truth into implementation direction.
 
-### `planning/`
+### `09_feedback/`
 
-The `planning/` directory is reserved for roadmap, sequencing, and system planning artifacts that sit between bridge guidance and active implementation.
+Structured feedback flowing back from downstream execution into the governance layer.
 
-This can include:
-
-- phased rollout plans
-- dependency maps
-- milestone breakdowns
-- service extraction plans
-- long-range architecture sequencing
+What lives here:
+- implementation results and outcomes
+- blockers and escalations
+- lessons and retrospective summaries
 
 Key principle:
 
-> Planning defines how change happens over time.
+> Execution must report back so governance stays current.
+
+### Supporting directories
+
+- `00_inbox/` — staging area for new ideas and unprocessed notes
+- `03_personas/` — user lenses and persona definitions
+- `04_capabilities/` — system capability definitions
+- `05_use_cases/` — concrete use case documentation
+- `archive/` — historical content preserved for continuity
 
 ### Child Repositories
 
 The actual product code belongs in child repositories, not here.
 
 Current product-facing execution repos include:
-
-- `hdl` or `hdl_react` for the frontend experience
+- `hdl_react` for the frontend experience
 - `hdl-node-backend-api` for the backend platform
 
 Those repositories execute the product. This repository defines truth and alignment.
@@ -93,13 +174,15 @@ Key principle:
 
 > Product executes the system, but does not define the doctrine.
 
+---
+
 ## System Layers
 
-### 1. Canon Layer
+### 1. Governance and Canon Layer
 
 Source of truth for:
-
-- Handle-first identity
+- HDL vision and principles
+- handle-first identity
 - wallet and routing doctrine
 - proof and badge systems
 - world structure
@@ -108,30 +191,29 @@ Source of truth for:
 ### 2. Bridge Layer
 
 Translation layer for:
-
 - frontend integration
 - backend integration
 - product gap analysis
 - existing system audits
 
-### 3. Planning Layer
+### 3. Orchestration Layer (Paperclip)
 
-Sequencing layer for:
-
-- implementation order
-- migration strategy
-- service evolution
-- long-range architecture execution
+Execution routing layer for:
+- organizational structure
+- role assignment
+- task routing
+- operational follow-through
 
 ### 4. Product Layer
 
 Execution layer for:
-
 - frontend UX
 - backend APIs
 - wallet interfaces
-- social/feed systems
+- social and feed systems
 - future world rendering
+
+---
 
 ## Core Architecture Principles
 
@@ -159,28 +241,17 @@ Execution layer for:
 - It should surface handles, proof, and actions clearly.
 - It is the social entry point into the HDL system.
 
-## Architectural Direction
-
-Current direction:
-
-- canon is defined separately from product
-- product systems are only partially aligned
-- bridge documents explain the delta
-
-Target direction:
-
-- handle-first identity everywhere
-- wallet abstraction behind routing
-- proof-driven reputation and status
-- world-aware interfaces over time
+---
 
 ## Rules
 
 - Canon is never modified to satisfy product convenience.
 - Product must adapt to canon.
 - Bridge documents define alignment strategy, not doctrine.
-- Planning documents define sequence, not truth.
+- Feedback artifacts must flow back into `09_feedback/` so the vault stays current.
 - Raw code does not belong in bridge or canon documents.
+
+---
 
 ## Final Principle
 
@@ -188,9 +259,9 @@ HDL is not just a social product.
 
 It is:
 
-> a handle-based identity system  
-> a wallet abstraction layer  
-> a proof-driven reputation system  
+> a handle-based identity system
+> a wallet abstraction layer
+> a proof-driven reputation system
 > a world-based interface
 
 Everything in the product layer must ultimately align to that.
