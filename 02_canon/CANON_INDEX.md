@@ -170,6 +170,22 @@ semantics are expressed in concrete terms.
 | `/canon/btc_world/RENDERING_IMPL.md` | Explains how BTC World implements rendering using instancing, camera behaviour and performance strategies across 2D, 3D and VR targets. |
 | `/canon/btc_world/BTC_HEX_NETWORK_SPEC.md` | Provides the consolidated canonical and technical specification of the hex-sphere representation of the Bitcoin network, including participation semantics, rendering requirements and performance rules. |
 
+## Product Verticals
+
+In addition to world canon, the HDL ecosystem includes standalone product vertical canon. Each product vertical has its own canon folder under `02_canon/`.
+
+### Hodlneer
+
+Location: `02_canon/Hodlneer/`
+
+Purpose: Standalone iOS identity product. Verifies a user's crypto origin and turns it into a premium 3D badge experience. Hodlneer is not a feature of HDL.fun — it is its own product with its own canon authority.
+
+Entry point: `02_canon/Hodlneer/HODLNEER_INDEX.md`
+
+Core canon: `IDENTITY_MODEL.md` (foundational), `PRODUCT_PRINCIPLES.md`, `BADGE_VISUAL_SYSTEM.md`, `BADGE_TO_BITCOIN_WORLD_VISUAL_SYSTEM.md`
+
+---
+
 ## Current Worlds
 
 The HDL universe currently defines two worlds. Each world resides in its own
