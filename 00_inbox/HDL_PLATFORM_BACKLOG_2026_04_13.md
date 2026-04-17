@@ -3,6 +3,11 @@
 **Source:** Security incident investigation + full FE/BE audit
 **Notion DB:** HDL Task Management (`233364d4-6d29-80e4-a993-cf688d4056b8`)
 
+> **STATUS: PROCESSED — 2026-04-17**
+> Processed by: hardening session
+> Destination: `09_feedback/HDL_PLATFORM_BACKLOG_PROCESSED_2026-04-17.md`
+> Disposition: Implementation items logged; terminology conflict (Claimed/Social/On-Chain) noted as superseded by canonical Declared/Confirmed/Verified. No vault canon changes required.
+
 ---
 
 ## High Priority

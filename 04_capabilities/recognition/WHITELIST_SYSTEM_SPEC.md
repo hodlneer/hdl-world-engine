@@ -146,9 +146,15 @@ States:
 | State | Meaning |
 |-------|---------|
 | `pending_review` | Candidate detected; awaiting admin |
+| `in_review` | Reviewer has claimed and is actively evaluating |
 | `approved` | Badge assignment authorized |
 | `rejected` | No badge |
 | `needs_more_info` | Additional verification requested |
+| `escalated` | Flagged for senior review or Core Canon Leadership |
+
+**Full admin review workflow spec:** `08_bridges/hodlneer/ADMIN_REVIEW_WORKFLOW_SPEC.md`
+
+That document defines: reviewer roles, required evidence, action types, rejection reason codes, post-approval/rejection flows, audit logging requirements, and admin vs end-user data visibility rules.
 
 ---
 
@@ -189,7 +195,8 @@ Badge assigned
 | Tier system canon | `02_canon/Hodlneer/CANON/TIER_SYSTEM.md` | Exists |
 | CoinDesk whitelist data | `03_data/whitelists/COINDESK_INFLUENTIAL_WHITELIST.json` | Exists |
 | Backend API spec | `08_bridges/hodlneer/whitelist-api.yaml` | Exists |
-| Admin review UI | `08_bridges/hodlneer/` | Not yet defined |
+| Admin review workflow spec | `08_bridges/hodlneer/ADMIN_REVIEW_WORKFLOW_SPEC.md` | Exists |
+| Admin review UI | `08_bridges/hodlneer/` | Spec defined; UI not yet built |
 | Onboarding flow | `02_canon/Hodlneer/COPY/ONBOARDING_COPY_AND_REVEAL_NARRATION.md` | Exists |
 
 ---

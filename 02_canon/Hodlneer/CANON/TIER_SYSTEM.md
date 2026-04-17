@@ -178,6 +178,25 @@ The badge represents historical truth. Historical truth does not expire.
 
 ---
 
+## Badge Expression Format
+
+The Hodlneer badge carries both this system and the Era × Verification identity formula simultaneously:
+
+```
+[Material Tier]
+[Era] • [Verification]
+```
+
+Example:
+```
+Gold
+Genesis • Verified
+```
+
+The material tier is the visual weight layer. Era × Verification is the identity layer. These are additive and non-redundant — each answers a different question. See `01_governance/decisions/I-1_TIER_MODEL_RECONCILIATION.md` for the full reconciliation decision.
+
+---
+
 ## Open Questions
 
 See `09_feedback/open-questions.md` for the active list. Key unresolved items:
@@ -197,3 +216,4 @@ See `09_feedback/open-questions.md` for the active list. Key unresolved items:
 - [[HODLNEER_INDEX]] — vertical entry point
 - `01_governance/vision/HODLNEER_BADGE_PRD.md` — product definition this doc operationalizes
 - `09_feedback/open-questions.md` — unresolved questions log
+- `01_governance/decisions/I-1_TIER_MODEL_RECONCILIATION.md` — decision doc confirming these are parallel, non-competing systems

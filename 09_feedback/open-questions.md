@@ -50,7 +50,7 @@ Questions are removed or marked resolved when Core Canon Leadership makes a deci
 
 | # | Question | Blocks | Owner |
 |---|----------|--------|-------|
-| I-1 | How does the material tier system (Bronze/Silver/Gold/Platinum) relate to the era × verification formula (Genesis/Breakout/Expansion × Verified/Confirmed/Declared)? Are these two independent systems or does one derive from the other? | Canon coherence — both systems are active and currently unreconciled | Core Canon Leadership |
+| ~~I-1~~ | ~~How does the material tier system relate to the era × verification formula?~~ | **RESOLVED 2026-04-17** — See `01_governance/decisions/I-1_TIER_MODEL_RECONCILIATION.md`. These are parallel, non-competing systems. Era × Verification = primary public identity. Material Tier = badge visual weight. Both appear on the badge simultaneously. The specific tier mapping for Bronze/Silver/Gold given an Era × Verification combination is a T-2 decision (still open). Platinum is independent of the Era × Verification track entirely. | — |
 | I-2 | "Declared" verification has no integrity mechanism. A user can self-declare any era with no validation. What prevents abuse? | Trust model, Verification Systems Lead design | Core Canon Leadership + Verification Systems Lead |
 
 ---

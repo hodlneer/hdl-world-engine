@@ -6,6 +6,27 @@ Tracks significant structural changes, new documents, and canon updates across t
 
 ---
 
+## 2026-04-17 (Hardening Session)
+
+### I-1 Tier Model Reconciliation — Resolved
+- **Created** `01_governance/decisions/I-1_TIER_MODEL_RECONCILIATION.md` — governance decision doc closing open question I-1. Decision: Material Tier (Bronze/Silver/Gold/Platinum) and Era × Verification are parallel, non-competing systems. Era × Verification = primary public identity. Material Tier = badge visual weight. Both appear on the badge simultaneously. For Bronze/Silver/Gold, tier is informed by both Era and Verification but the exact mapping is a T-2 decision (still open). Platinum is an independent recognition track entirely separate from Era × Verification.
+- **Updated** `02_canon/Hodlneer/CANON/TIER_SYSTEM.md` — added Badge Expression Format section (`[Material Tier]` / `[Era] • [Verification]`), linked to decision doc
+- **Updated** `02_canon/Hodlneer/CANON/IDENTITY_MODEL.md` — added cross-references to TIER_SYSTEM and I-1 decision doc
+- **Updated** `09_feedback/open-questions.md` — marked I-1 resolved with link to decision doc; I-2 remains open
+
+### Admin Review Workflow Spec
+- **Created** `08_bridges/hodlneer/ADMIN_REVIEW_WORKFLOW_SPEC.md` — full operational spec for the whitelist admin review layer. Defines: 6 queue states (pending_review, in_review, needs_more_info, approved, rejected, escalated), reviewer role hierarchy (Admin / Senior / Core Canon Leadership), required evidence checklist for approval, rejection reason codes (controlled vocabulary), post-approval badge trigger flow, post-rejection notification rules, needs_more_info end-to-end flow, immutable audit logging requirements (9 fields), admin vs end-user data visibility table, edge case handling (duplicate accounts, pseudonymous figures, withdrawal), and API endpoint mapping to `whitelist-api.yaml`.
+- **Updated** `04_capabilities/recognition/WHITELIST_SYSTEM_SPEC.md` — expanded Section 10 (admin workflow states) to include `in_review` and `escalated`; linked to admin review spec; updated dependency table to mark admin review spec as existing
+
+### Inbox Processing — HDL Platform Backlog 2026-04-13
+- **Created** `09_feedback/HDL_PLATFORM_BACKLOG_PROCESSED_2026-04-17.md` — processed record for the platform backlog. Key finding: terminology conflict identified — old backlog references "Claimed → Social → On-Chain" verification tiers; canonical model (as of 2026-04-17) is "Declared → Confirmed → Verified". All implementation-level items routed to implementation repos; no vault canon changes required. Phase 1.5 blockers (LLC/EIN/Stripe) confirmed consistent with existing canon.
+- **Updated** `00_inbox/HDL_PLATFORM_BACKLOG_2026_04_13.md` — marked PROCESSED with destination reference
+
+### Backend Implementation Handoff
+- **Created** `09_feedback/WHITELIST_BACKEND_HANDOFF_2026-04-17.md` — concise handoff note for hdl-node-backend-api. Whitelist matching engine and admin review layer are unblocked. Recommended implementation order: data ingestion → matching engine → review queue + audit log → badge trigger (Platinum) → tier assignment engine (Bronze/Silver/Gold, blocked on T-2). Schema notes included. Remaining blockers listed (T-1, T-2, I-2, T-3).
+
+---
+
 ## 2026-04-17
 
 ### Whitelist System Spec + OpenAPI Bridge

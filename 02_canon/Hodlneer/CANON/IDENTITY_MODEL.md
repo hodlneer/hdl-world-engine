@@ -230,3 +230,5 @@ The world should reflect the logic. It should not invent a second identity syste
 - [[HODLNEER_TO_HDL]] — bridge rules that respect public/private identity boundaries
 - [[HDL_TO_HODLNEER]] — reverse bridge aligned to this identity logic
 - [[EPICS]] — implementation lanes that execute this model
+- [[TIER_SYSTEM]] — material tier system that coexists with this formula on the badge
+- `01_governance/decisions/I-1_TIER_MODEL_RECONCILIATION.md` — decision confirming Era × Verification and Material Tier are parallel, non-competing systems
