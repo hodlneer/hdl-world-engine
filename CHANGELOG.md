@@ -8,6 +8,11 @@ Tracks significant structural changes, new documents, and canon updates across t
 
 ## 2026-04-17
 
+### Whitelist System Spec + OpenAPI Bridge
+- **Created** `04_capabilities/recognition/WHITELIST_SYSTEM_SPEC.md` — full system spec for the Platinum recognition pipeline. Defines: purpose (recognition signal, not badge assignment), data layers (source → canonical identity → match evaluation), entity types, eligibility states, match scoring model (exact/alias/handle/fuzzy + thresholds), decision policy (NO auto Platinum at launch — all matches → admin review), admin workflow states, product flow, security rules, and future expansion paths.
+- **Created** `08_bridges/hodlneer/whitelist-api.yaml` — OpenAPI 3.0 spec for `hdl-node-backend-api`. Covers: `/whitelist/match` (onboarding match engine), `/whitelist/entities` + `/{id}` (admin entity management), `/whitelist/review-queue` (admin queue), `/whitelist/matches/{id}/approve|reject|flag` (decision endpoints). Full schema definitions: MatchRequest, MatchResult, WhitelistEntity, ReviewCase, ReviewDecision. Security: bearerAuth JWT; admin-only mutations; match_score not exposed to end users.
+- **Created** `08_bridges/hodlneer/` folder — first bridge layer for Hodlneer → backend repo translation
+
 ### CoinDesk Most Influential Whitelist
 - **Created** `03_data/whitelists/COINDESK_INFLUENTIAL_WHITELIST.md` — canonical whitelist of individuals featured on CoinDesk's annual "Most Influential in Crypto" lists (2014–2025). v1.1.0: 173 total entries, 153 HIGH confidence, 8 MEDIUM, 12 EXCLUDED. 2019 and 2020 years complete (100%). 2023 at 76% (38/50 confirmed), 2024 at 95%. Includes master deduplicated table, yearly breakdown, confidence tiers, data quality flags, and backend matching usage rules. Purpose: seed dataset for Hodlneer Platinum (Origin) tier recognition.
 - **Created** `03_data/whitelists/COINDESK_INFLUENTIAL_WHITELIST.json` — normalized JSON schema version. Per-entry confidence (HIGH/MEDIUM/EXCLUDE), flags, is_anonymous and is_organization booleans, yearly breakdown with entry ID lists, corrections log in metadata, multi-year appearance statistics. ID namespace: cdwl_001 through cdwl_173.

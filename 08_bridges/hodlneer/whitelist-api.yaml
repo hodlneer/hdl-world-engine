@@ -1,0 +1,483 @@
+openapi: 3.0.3
+info:
+  title: Hodlneer Whitelist API
+  version: 1.0.0
+  description: |
+    Recognition whitelist system for Hodlneer.
+
+    This API supports the Platinum (Origin) tier recognition pipeline.
+    It does NOT assign badges directly — it produces recognition candidates
+    for admin review. See vault spec: 04_capabilities/recognition/WHITELIST_SYSTEM_SPEC.md
+
+    Security rules:
+    - Whitelist membership is NOT public
+    - Confidence scores are NOT returned to end users
+    - All write operations require admin role
+    - All decisions are audit-logged
+
+servers:
+  - url: https://api.hdl.fun
+    description: Production
+  - url: https://api-staging.hdl.fun
+    description: Staging
+
+paths:
+
+  /whitelist/match:
+    post:
+      summary: Match onboarding user to whitelist
+      description: |
+        Runs the match engine against the canonical whitelist.
+        Called during the Hodlneer onboarding flow after identity inputs are submitted.
+        Returns a recommendation — does NOT trigger badge assignment.
+      operationId: matchUser
+      tags: [Matching]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MatchRequest'
+            example:
+              user_id: "usr_abc123"
+              full_name: "Vitalik Buterin"
+              display_name: "vbuterin"
+              social_handles: ["@VitalikButerin"]
+      responses:
+        '200':
+          description: Match result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MatchResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /whitelist/entities:
+    get:
+      summary: List whitelist entities
+      description: Admin-only. Returns canonical whitelist entities with optional filters.
+      operationId: listEntities
+      tags: [Entities]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: eligibility
+          schema:
+            type: string
+            enum: [eligible, manual_only, excluded]
+          description: Filter by eligibility state
+        - in: query
+          name: confidence
+          schema:
+            type: string
+            enum: [HIGH, MEDIUM, EXCLUDE]
+          description: Filter by confidence level
+        - in: query
+          name: search
+          schema:
+            type: string
+          description: Full-text search on canonical name and aliases
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            default: 50
+            maximum: 200
+        - in: query
+          name: offset
+          schema:
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: Paginated entity list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/WhitelistEntity'
+                  total:
+                    type: integer
+                  limit:
+                    type: integer
+                  offset:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /whitelist/entities/{id}:
+    get:
+      summary: Get entity by ID
+      operationId: getEntity
+      tags: [Entities]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          example: cdwl_004
+      responses:
+        '200':
+          description: Entity details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WhitelistEntity'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /whitelist/review-queue:
+    get:
+      summary: Get pending review cases
+      description: Admin-only. Returns all match cases in pending_review state.
+      operationId: getReviewQueue
+      tags: [Admin]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: state
+          schema:
+            type: string
+            enum: [pending_review, approved, rejected, needs_more_info]
+          description: Filter by decision state (default: pending_review)
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            default: 50
+        - in: query
+          name: offset
+          schema:
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: Review queue
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ReviewCase'
+                  total:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /whitelist/matches/{id}/approve:
+    post:
+      summary: Approve whitelist match
+      description: |
+        Admin-only. Marks a review case as approved and triggers Platinum badge assignment.
+        Requires admin role. Action is audit-logged.
+      operationId: approveMatch
+      tags: [Admin]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Review case ID
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                admin_note:
+                  type: string
+                  description: Optional note recorded in audit log
+      responses:
+        '200':
+          description: Approved — badge assignment queued
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReviewDecision'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /whitelist/matches/{id}/reject:
+    post:
+      summary: Reject whitelist match
+      description: Admin-only. Marks a review case as rejected. Audit-logged.
+      operationId: rejectMatch
+      tags: [Admin]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                admin_note:
+                  type: string
+      responses:
+        '200':
+          description: Rejected
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReviewDecision'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /whitelist/matches/{id}/flag:
+    post:
+      summary: Flag match for more information
+      description: Admin-only. Moves a case to needs_more_info state.
+      operationId: flagMatch
+      tags: [Admin]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [admin_note]
+              properties:
+                admin_note:
+                  type: string
+                  description: Required — explain what information is needed
+      responses:
+        '200':
+          description: Flagged
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReviewDecision'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+components:
+  schemas:
+
+    MatchRequest:
+      type: object
+      required: [full_name]
+      properties:
+        user_id:
+          type: string
+          description: Hodlneer user ID (if already created)
+        full_name:
+          type: string
+          description: Full name as submitted during onboarding
+        display_name:
+          type: string
+          description: Optional display name or username
+        social_handles:
+          type: array
+          items:
+            type: string
+          description: Social handles submitted during onboarding (e.g. "@VitalikButerin")
+
+    MatchResult:
+      type: object
+      properties:
+        matched:
+          type: boolean
+          description: Whether a candidate was found
+        candidate:
+          $ref: '#/components/schemas/MatchCandidate'
+          nullable: true
+        match_score:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+          description: |
+            Internal match confidence score.
+            NOT returned to end users — admin-only field.
+        recommendation:
+          type: string
+          enum: [no_match, pending_review, high_confidence_review]
+          description: |
+            no_match: no whitelist candidate found
+            pending_review: candidate found, queued for admin
+            high_confidence_review: strong match, prioritized in queue
+
+    MatchCandidate:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Whitelist entity ID (e.g. cdwl_004)
+        canonical_name:
+          type: string
+        confidence:
+          type: string
+          enum: [HIGH, MEDIUM]
+
+    WhitelistEntity:
+      type: object
+      properties:
+        id:
+          type: string
+          example: cdwl_004
+        canonical_name:
+          type: string
+          example: Vitalik Buterin
+        aliases:
+          type: array
+          items:
+            type: string
+          example: ["@VitalikButerin"]
+        entity_type:
+          type: string
+          enum: [individual, organization, symbolic, anonymous, collective]
+        eligibility:
+          type: string
+          enum: [eligible, manual_only, excluded]
+        confidence:
+          type: string
+          enum: [HIGH, MEDIUM, EXCLUDE]
+        years_appeared:
+          type: array
+          items:
+            type: integer
+        first_appearance:
+          type: integer
+        last_appearance:
+          type: integer
+        appearance_count:
+          type: integer
+        flags:
+          type: array
+          items:
+            type: string
+          example: []
+
+    ReviewCase:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Review case ID
+        user_id:
+          type: string
+        submitted_name:
+          type: string
+        matched_entity_id:
+          type: string
+        matched_entity_name:
+          type: string
+        match_score:
+          type: number
+          format: float
+        recommendation:
+          type: string
+        state:
+          type: string
+          enum: [pending_review, approved, rejected, needs_more_info]
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        admin_note:
+          type: string
+          nullable: true
+
+    ReviewDecision:
+      type: object
+      properties:
+        case_id:
+          type: string
+        state:
+          type: string
+          enum: [approved, rejected, needs_more_info]
+        decided_at:
+          type: string
+          format: date-time
+        admin_note:
+          type: string
+          nullable: true
+
+  responses:
+    BadRequest:
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+    Unauthorized:
+      description: Missing or invalid auth token
+    Forbidden:
+      description: Insufficient permissions (admin role required)
+    NotFound:
+      description: Resource not found
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+tags:
+  - name: Matching
+    description: Onboarding-time match operations
+  - name: Entities
+    description: Whitelist entity management (admin)
+  - name: Admin
+    description: Review queue and decision operations (admin)
